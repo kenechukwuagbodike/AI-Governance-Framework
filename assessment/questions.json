@@ -1,0 +1,227 @@
+{
+  "maturity_scale": {
+    "1": "Not started",
+    "2": "Ad hoc, happens but isn't documented or consistent",
+    "3": "Defined, a process exists but isn't consistently followed",
+    "4": "Managed, followed consistently and monitored",
+    "5": "Fully embedded, routine, monitored, and improved over time"
+  },
+  "dimensions": [
+    {
+      "number": 1,
+      "name": "AI Inventory and Asset Register",
+      "framework_section": 1,
+      "questions": [
+        {
+          "id": "1.1",
+          "text": "Does a register of AI systems in use across the organisation exist at all?"
+        },
+        {
+          "id": "1.2",
+          "text": "Does each register entry capture a named owner (a role, not an individual), purpose, deployment status, and data sources, in line with ATRS's own field structure?"
+        },
+        {
+          "id": "1.3",
+          "text": "Is a risk tier recorded against each system on the register, distinct from a general sense of how risky it feels?"
+        },
+        {
+          "id": "1.4",
+          "text": "Are high-risk systems reviewed at least every six months against a defined schedule, rather than whenever someone remembers to check?"
+        },
+        {
+          "id": "1.5",
+          "text": "Are decommissioned systems kept on the register with their downstream dependencies documented, rather than deleted once retired?"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "name": "Risk Classification",
+      "framework_section": 2,
+      "questions": [
+        {
+          "id": "2.1",
+          "text": "Is there a defined process for classifying each AI system into a risk tier before it is deployed, not after?"
+        },
+        {
+          "id": "2.2",
+          "text": "Does that process explicitly check the system against the EU AI Act's prohibited practices before considering anything else?"
+        },
+        {
+          "id": "2.3",
+          "text": "For systems touching patient care, is a severity and likelihood clinical risk matrix applied and recorded in a Clinical Safety Case Report?"
+        },
+        {
+          "id": "2.4",
+          "text": "Is risk classification reassessed on defined triggers, a change of purpose, a new data source, rather than treated as a one-time label?"
+        },
+        {
+          "id": "2.5",
+          "text": "Is there a named, senior role, separate from the system owner, who confirms and signs off each risk tier before deployment?"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "name": "Impact Assessment",
+      "framework_section": 3,
+      "questions": [
+        {
+          "id": "3.1",
+          "text": "Is a Data Protection Impact Assessment completed before build begins for any system meeting UK GDPR's high-risk processing triggers?"
+        },
+        {
+          "id": "3.2",
+          "text": "Does the assessment separately identify allocative harm (unfair distribution of opportunity) and representational harm (reinforced stereotyping), rather than one generic bias line?"
+        },
+        {
+          "id": "3.3",
+          "text": "Is residual risk explicitly recorded, with a documented process for escalating to the ICO where it cannot be sufficiently reduced?"
+        },
+        {
+          "id": "3.4",
+          "text": "For health systems, is a DTAC assessment completed with each of its five domains signed off by its own named accountable officer?"
+        },
+        {
+          "id": "3.5",
+          "text": "Is the impact assessment revisited on the same triggers as the risk tier, rather than treated as a one-time gate at launch?"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "name": "Bias and Fairness",
+      "framework_section": 4,
+      "questions": [
+        {
+          "id": "4.1",
+          "text": "Is bias testing performed against all nine protected characteristics before deployment, not just the ones that seem obviously relevant?"
+        },
+        {
+          "id": "4.2",
+          "text": "Does bias testing account for proxy variables, rather than relying on removing protected characteristics from the training data?"
+        },
+        {
+          "id": "4.3",
+          "text": "Where a disparity is found, is a documented, evidenced proportionality case made, rather than an assertion that the model is accurate?"
+        },
+        {
+          "id": "4.4",
+          "text": "For public sector deployments, is a Section 149 public sector equality duty assessment completed and signed off before go-live?"
+        },
+        {
+          "id": "4.5",
+          "text": "Is bias testing repeated after retraining or a change in use, rather than treated as a permanent clearance from the original test?"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "name": "Data Governance",
+      "framework_section": 5,
+      "questions": [
+        {
+          "id": "5.1",
+          "text": "Is the lawful basis, minimisation rationale, and retention period for training data documented before collection begins?"
+        },
+        {
+          "id": "5.2",
+          "text": "Is the distinction between data accuracy and statistical accuracy understood and tested separately, rather than treated as one thing?"
+        },
+        {
+          "id": "5.3",
+          "text": "Are AI-specific security risks, model inversion and membership inference attacks, assessed as part of the system's security review?"
+        },
+        {
+          "id": "5.4",
+          "text": "Where a supplier is involved, is accountability for each part of the data processing explicitly allocated between the organisation and that supplier?"
+        },
+        {
+          "id": "5.5",
+          "text": "Are individual rights requests, erasure, restriction, objection, routed through a process that covers the full AI lifecycle, not just the original dataset?"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "name": "Human Oversight",
+      "framework_section": 6,
+      "questions": [
+        {
+          "id": "6.1",
+          "text": "Is a named, trained human overseer assigned to each high-risk system, distinct from the system owner?"
+        },
+        {
+          "id": "6.2",
+          "text": "Are overseers specifically trained to recognise automation bias, rather than simply given access to the system?"
+        },
+        {
+          "id": "6.3",
+          "text": "Has the stop or override procedure actually been tested by the people responsible for using it, not just written down?"
+        },
+        {
+          "id": "6.4",
+          "text": "For biometric identification systems, is the two-person independent verification rule genuinely implemented, not just stated as policy?"
+        },
+        {
+          "id": "6.5",
+          "text": "Are overseers equipped with an explanation of the system's output suited to their context, rather than a generic technical summary?"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "name": "Incident Response",
+      "framework_section": 7,
+      "questions": [
+        {
+          "id": "7.1",
+          "text": "Is there a live, documented process for collecting and reviewing safety or performance concerns after deployment, not just a plan for one?"
+        },
+        {
+          "id": "7.2",
+          "text": "Does the organisation know, before an incident happens, which of the EU AI Act's four serious incident categories would require reporting?"
+        },
+        {
+          "id": "7.3",
+          "text": "Are the correct external reporting deadlines understood and operationalised, distinct from internal log review timeframes?"
+        },
+        {
+          "id": "7.4",
+          "text": "For health systems, is there a clear, working separation between the internal safety incident log and external regulatory reporting?"
+        },
+        {
+          "id": "7.5",
+          "text": "Does a serious incident automatically trigger a reassessment of the system's risk tier, rather than being logged and closed?"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "name": "Audit Trail and Reporting",
+      "framework_section": 8,
+      "questions": [
+        {
+          "id": "8.1",
+          "text": "Are automatically generated system logs retained for at least six months under a defined process, not on an ad hoc basis?"
+        },
+        {
+          "id": "8.2",
+          "text": "Is technical documentation retained separately from operational logs, for the full period the law requires, not the same period as the logs?"
+        },
+        {
+          "id": "8.3",
+          "text": "Can the organisation actually retrieve a specific system's impact assessment, risk tier record, and bias test results on request?"
+        },
+        {
+          "id": "8.4",
+          "text": "Is access to the audit trail itself secured, given it contains the same sensitive information the underlying systems process?"
+        },
+        {
+          "id": "8.5",
+          "text": "Has the organisation made a deliberate decision about whether to pursue external certification, rather than never having considered it?"
+        }
+      ]
+    }
+  ]
+}

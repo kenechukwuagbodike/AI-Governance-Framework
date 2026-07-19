@@ -1,0 +1,42 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Environment & secrets
+.env
+*.env
+
+# Source reference material (third-party PDFs, not ours to redistribute)
+library/
+
+# Generated outputs (regenerate from pipeline)
+framework/ai_governance_framework.docx
+assessment/*.pdf
+
+# Test scenario scratch material (internal QA, not a deliverable)
+test-scenarios/
+
+# Logs
+*.log
+run_log.txt
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Jupyter
+.ipynb_checkpoints/
