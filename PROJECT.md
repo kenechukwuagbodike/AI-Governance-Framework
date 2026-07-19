@@ -1,8 +1,8 @@
 # Project 9: AI Governance Framework + Self-Assessment Tool
-**Status:** 🟡 Build complete, pending GitHub push and Streamlit deploy
+**Status:** 🟢 Live
 **Last Updated:** 2026-07-19
-**Live Demo:** _(fill in after deployment)_
-**GitHub:** https://github.com/kenechukwuagbodike/ai-governance-framework
+**Live Demo:** https://keni-ai-governance-framework.streamlit.app/
+**GitHub:** https://github.com/kenechukwuagbodike/AI-Governance-Framework
 
 ---
 
@@ -116,10 +116,22 @@ See CLAUDE.md for the full folder structure and build order.
 ---
 
 ## Next Actions
-- [ ] Install `gh` CLI or get the empty GitHub repo's remote URL from Kene
-- [ ] Push local repo to `github.com/kenechukwuagbodike/ai-governance-framework`
-- [ ] Deploy `dashboard/app.py` to Streamlit Community Cloud
-- [ ] Fill in the live demo link in this file and in README.md
+- [x] Get the empty GitHub repo's remote URL from Kene (gh CLI still not
+      installed on this machine, pushed via plain git instead)
+- [x] Push local repo to `github.com/kenechukwuagbodike/AI-Governance-Framework`
+- [x] Deploy `dashboard/app.py` to Streamlit Community Cloud
+- [x] Fill in the live demo link in this file and in README.md
+- [x] Fix deployment crash: kaleido 1.x needs Chrome, which Streamlit
+      Cloud's container doesn't have by default. Added `packages.txt`
+      (installs system Chromium) rather than downgrading kaleido, since
+      the older 0.2.x line is deprecated and hung on this local machine
+      when tested as an alternative. Verified fixed on the live app via
+      a real browser session: downloaded an actual PDF, not just checked
+      that the page loaded.
+- [ ] Both components of P9 are now built and live in one session: the
+      framework document and the self-assessment tool. Nothing left
+      queued, next work here would be a deliberate new iteration, not a
+      continuation.
 
 ---
 

@@ -40,8 +40,7 @@ not hidden in a footnote.
 
 ## Demo
 
-<!-- Add links after deployment -->
-- **Live demo:** Streamlit Community Cloud, link coming soon
+- **Live demo:** https://keni-ai-governance-framework.streamlit.app/
 - **Framework document:** downloadable from the live app
 
 ## Getting started
