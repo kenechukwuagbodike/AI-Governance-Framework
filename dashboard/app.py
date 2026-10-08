@@ -42,7 +42,9 @@ def init_session_state(questions_data: dict) -> None:
     if "answers" not in st.session_state:
         st.session_state.answers = {}
     if "org_name" not in st.session_state:
-        st.session_state.org_name = ""
+        st.session_state.org_name = st.query_params.get("org", "")
+    if "sector" not in st.session_state:
+        st.session_state.sector = st.query_params.get("sector", "")
 
 
 def render_assessment_tab(questions_data: dict) -> None:
@@ -143,7 +145,11 @@ def main() -> None:
         "Organisation name (for your report)", value=st.session_state.org_name
     )
     sectors = get_benchmark_sectors()
-    sector = st.sidebar.selectbox("Compare against sector", sectors)
+    default_sector = st.session_state.sector if st.session_state.sector in sectors else sectors[0]
+    sector = st.sidebar.selectbox(
+        "Compare against sector", sectors, index=sectors.index(default_sector)
+    )
+    st.session_state.sector = sector
 
     tab1, tab2 = st.tabs(["Assessment", "Results & Report"])
     with tab1:
