@@ -9,6 +9,7 @@ produces a downloadable PDF gap analysis report.
 import logging
 import sys
 from pathlib import Path
+from urllib.parse import urlencode
 
 import streamlit as st
 
@@ -16,6 +17,28 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "assessment"))
 import scoring  # noqa: E402
 from charts import build_radar_chart  # noqa: E402
 from report_generator import generate_report  # noqa: E402
+
+P10_APP_URL = "https://keni-data-maturity-tool.streamlit.app"
+
+# P9 and P10 score different sector benchmark sets with different naming.
+# Maps a P9 sector onto its closest P10 equivalent so the cross-link can
+# pre-fill the other tool's sector selector.
+SECTOR_MAP_P9_TO_P10 = {
+    "Healthcare / NHS": "NHS / Public Sector",
+    "Financial Services": "Financial Services",
+    "Retail / E-commerce": "Retail / E-commerce",
+}
+
+
+def build_p10_link(org_name: str, sector: str) -> str:
+    params = {}
+    if org_name:
+        params["org"] = org_name
+    mapped_sector = SECTOR_MAP_P9_TO_P10.get(sector)
+    if mapped_sector:
+        params["sector"] = mapped_sector
+    query = f"?{urlencode(params)}" if params else ""
+    return f"{P10_APP_URL}{query}"
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 logger = logging.getLogger(__name__)
@@ -127,6 +150,16 @@ def render_results_tab(questions_data: dict, sector: str) -> None:
         data=pdf_bytes,
         file_name="ai_governance_gap_analysis.pdf",
         mime="application/pdf",
+    )
+
+    st.divider()
+    p10_link = build_p10_link(st.session_state.org_name, sector)
+    st.markdown(
+        "### Before this, a prior question\n"
+        "This score assumes a data foundation already exists for AI systems "
+        "to run on. If that is not yet confirmed, the companion "
+        f"[Data Maturity Assessment]({p10_link}) scores whether it does, "
+        "the question to answer before this one."
     )
 
 
