@@ -1,5 +1,5 @@
 # Project 9: AI Governance Framework + Self-Assessment Tool
-**Status:** 🟢 Live (cross-link with P10 built and tested locally, not yet redeployed)
+**Status:** 🟢 Live, including the P10 cross-link (redeployed ahead of the original joint-release plan, verified working on the live URL)
 **Last Updated:** 2026-10-08
 **Live Demo:** https://keni-ai-governance-framework.streamlit.app/
 **GitHub:** https://github.com/kenechukwuagbodike/AI-Governance-Framework
@@ -138,11 +138,18 @@ See CLAUDE.md for the full folder structure and build order.
       that the page loaded.
 - [x] Both components of P9 are now built and live in one session: the
       framework document and the self-assessment tool.
-- [ ] Cross-link with P10 (query param pre-fill) built and verified
+- [x] Cross-link with P10 (query param pre-fill) built and verified
       locally with Streamlit's `AppTest` harness (no query params:
       unchanged behaviour; valid params: correct pre-fill; unmapped
-      sector: safe fallback, no crash). Not yet redeployed to Streamlit
-      Community Cloud, the live app still runs the pre-cross-link code
+      sector: safe fallback, no crash). Pushed and redeployed to
+      Streamlit Community Cloud earlier than the original joint-release
+      plan (Kene pushed directly rather than waiting on P10). Confirmed
+      working on the live URL: base app loads normally, and
+      `?org=Test+Org&sector=Healthcare+%2F+NHS` correctly pre-fills the
+      sidebar. No functional risk since P10 isn't live yet to link to it,
+      the feature is just sitting dormant slightly ahead of schedule.
+- [ ] Deploy P10 to Streamlit Community Cloud, the one piece still
+      outstanding before the pair is fully live together
       until that's done deliberately.
 
 ---
