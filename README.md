@@ -1,6 +1,6 @@
 # AI Governance Framework + Self-Assessment Tool
 
-> A ready-to-adopt AI governance framework (NIST AI RMF, NHS AI Lab, ICO, EU AI Act)
+> A ready-to-adopt AI governance framework (EU AI Act, NIST AI RMF, UK GDPR, ICO)
 > and a self-assessment tool that scores your organisation against it.
 
 Part of the [Data to Decisions](https://github.com/kenechukwuagbodike) portfolio by
@@ -10,9 +10,9 @@ Kene Agbodike, Data and AI Decision Systems Consultant.
 
 ## Overview
 
-NHS Trusts, Civil Service departments, and regulated organisations are under
-pressure to demonstrate AI governance before deploying algorithmic systems, and
-most don't know where to start. This project delivers two linked assets:
+Organisations deploying AI are under pressure to demonstrate governance before
+a regulator, an investor, or a client asks, and most don't know where to
+start. This project delivers two linked assets:
 
 1. **A governance framework document**, structured around NIST AI RMF's four
    functions (GOVERN, MAP, MEASURE, MANAGE) and covering 8 dimensions: AI
@@ -33,6 +33,12 @@ Sector benchmark scores in the assessment tool are illustrative reference
 points built to show directional gaps, not figures from a published industry
 survey. That distinction is stated on the chart itself and in the PDF report,
 not hidden in a footnote.
+
+Pressure-tested against three different client profiles before shipping: an
+FMCG manufacturer, an early-stage fintech lender, and a healthtech vendor
+selling into the NHS, the sector with the highest bar, DCB0129/DCB0160 clinical
+risk standards, on top of everything else. Each produced a genuinely different
+gap analysis, not the same output with a different logo.
 
 ## Stack
 
