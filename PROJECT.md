@@ -1,6 +1,6 @@
 # Project 9: AI Governance Framework + Self-Assessment Tool
-**Status:** 🟢 Live
-**Last Updated:** 2026-07-19
+**Status:** 🟢 Live (cross-link with P10 built and tested locally, not yet redeployed)
+**Last Updated:** 2026-10-08
 **Live Demo:** https://keni-ai-governance-framework.streamlit.app/
 **GitHub:** https://github.com/kenechukwuagbodike/AI-Governance-Framework
 
@@ -67,6 +67,14 @@ See CLAUDE.md for the full folder structure and build order.
   narratively critical dimension (Bias and Fairness) behind others that
   are numerically larger but less urgent. Fixed by RAG-colouring the full
   8-dimension table, not just the top 3, so nothing red stays invisible.
+- P9 and P10 (Data Maturity Assessment Tool) stay as two separately
+  deployed apps rather than merging into one, since their scoring engines
+  don't overlap and P9 is already live at a bookmarked URL. Added a
+  lightweight cross-link instead: `init_session_state()` now reads `org`
+  and `sector` from `st.query_params` so a link from P10 (or anywhere
+  else) can pre-fill the sidebar. With no query params, behaviour is
+  unchanged from before this change. Combined-report feature scoped
+  separately as a later v2 idea, not built here.
 
 ---
 
@@ -128,10 +136,14 @@ See CLAUDE.md for the full folder structure and build order.
       when tested as an alternative. Verified fixed on the live app via
       a real browser session: downloaded an actual PDF, not just checked
       that the page loaded.
-- [ ] Both components of P9 are now built and live in one session: the
-      framework document and the self-assessment tool. Nothing left
-      queued, next work here would be a deliberate new iteration, not a
-      continuation.
+- [x] Both components of P9 are now built and live in one session: the
+      framework document and the self-assessment tool.
+- [ ] Cross-link with P10 (query param pre-fill) built and verified
+      locally with Streamlit's `AppTest` harness (no query params:
+      unchanged behaviour; valid params: correct pre-fill; unmapped
+      sector: safe fallback, no crash). Not yet redeployed to Streamlit
+      Community Cloud, the live app still runs the pre-cross-link code
+      until that's done deliberately.
 
 ---
 
